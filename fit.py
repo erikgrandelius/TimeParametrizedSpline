@@ -117,10 +117,10 @@ u_sample = u_sample / L
 
 
 
-spline =fitCurve(t_sample, x_sample, y_sample, u_sample, tol=1e-3)
+spline =fitCurve(t_sample, x_sample, y_sample, u_sample, tol=1e-2)
 u = fitu(t_sample, u_sample, tol= 1e-2)
 
-
+print(spline)
 print('Max space-time error: ', np.linalg.norm(interpolate.splev(interpolate.splev(t_sample,u), spline) - p_sample.T))
 
 
